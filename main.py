@@ -14,12 +14,14 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 db = Session(bind=engine.connect())
+def ssc_id_policy(link):
+        return hashlib.md5(link.encode("utf-8")).hexdigest()
 
 #-------------------------channel 1----------------------------------#
 
 url1 = "https://doc.ssc.nic.in/Portal/LatestNews"
 tag1 = "ssc"
-table_name1 = "sscnews"
+table_name1 = "ssc"
 
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -31,7 +33,7 @@ ie1.set_paragraph_selector('a')
 ie1.set_time_selector('span')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
-
+ie1.set_id_policy(ssc_id_policy)
 # News postman to manage sending affair
 np1 = NewsPostman(listURLs=[url1, ], sendList=[channel, ], db=db, tag=tag1)
 np1.set_bot_token(bot_token)
