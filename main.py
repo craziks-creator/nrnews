@@ -20,15 +20,15 @@ def ssc_id_policy(link):
 
 #-------------------------channel 1----------------------------------#
 
-url1 = "https://doc.ssc.nic.in/Portal/LatestNews"
-tag1 = "ssc"
-table_name1 = "ssc"
+url1 = "https://sscnr.nic.in/newlook/site/Whatsnew.html"
+tag1 = "sscnr"
+table_name1 = "sscnr"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
-ie1.set_list_selector('#forScrollNews > ul > li')
-ie1.set_title_selector('h3')
-ie1.set_paragraph_selector('#forScrollNews > ul > li > a')
+ie1.set_list_selector('div.inner_page > ul > li > a') #id_ul_li
+ie1.set_title_selector('h4')  #id
+ie1.set_paragraph_selector('div.inner_page > ul > li > a[href]')
 ie1.set_time_selector('span')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
