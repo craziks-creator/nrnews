@@ -73,7 +73,7 @@ table_name4 = "others"
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
 ie1.set_list_selector('#noticesothers > div.noticeTxt a') #id_ul_li
-ie1.set_title_selector('#noticesothers')  #id
+ie1.set_title_selector('td')  #id
 ie1.set_paragraph_selector('#noticesothers > div.noticeTxt a[href]')
 ie1.set_time_selector('td')
 ie1.set_source_selector('span.sourceTemplate')
