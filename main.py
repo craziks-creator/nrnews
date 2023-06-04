@@ -42,9 +42,9 @@ np1.set_max_list_length(25)
 np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 #-------------------------channel 2----------------------------------#
-url2 = "https://ssc.nic.in/Portal/Results"
-tag2 = "cgl result"
-table_name2 = "cgl"
+url4 = "https://ssc.nic.in/Portal/Results"
+tag4 = "cgl result"
+table_name4 = "cgl"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
@@ -56,14 +56,14 @@ ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
 #ie1.set_id_policy(ssc_id_policy)
 # News postman to manage sending affair
-np1 = NewsPostman(listURLs=[url2, ], sendList=[channel,channel2, ], db=db, tag=tag2)
+np1 = NewsPostman(listURLs=[url4, ], sendList=[channel,channel2, ], db=db, tag=tag4)
 np1.set_bot_token(bot_token)
 np1.set_extractor(ie1)
-np1.set_table_name(table_name2)
+np1.set_table_name(table_name4)
 np1.set_max_list_length(25)
 np1.set_max_table_rows(25 * 3, False)
 np1.poll()
-#-------------------------channel 1A----------------------------------#
+#-------------------------channel 3----------------------------------#
 url3 = "https://ssc.nic.in/Portal/Results"
 tag3 = "chsl result"
 table_name3 = "chsl"
@@ -76,7 +76,7 @@ ie1.set_paragraph_selector('#noticeschsl > div.noticeTxt a[href]')
 ie1.set_time_selector('td')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
-#ie1.set_id_policy(ssc_id_policy)
+ie1.set_id_policy(ssc_id_policy)
 # News postman to manage sending affair
 np1 = NewsPostman(listURLs=[url3, ], sendList=[channel,channel2, ], db=db, tag=tag3)
 np1.set_bot_token(bot_token)
@@ -87,7 +87,7 @@ np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 
 """
-#-------------------------channel 3----------------------------------#
+#-------------------------channel 1A----------------------------------#
 url2 = "https://www.scmp.com/rss/91/feed"
 tag2 = "SCMP"
 table_name2 = "scmpnews"
