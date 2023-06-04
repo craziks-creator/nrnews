@@ -44,7 +44,7 @@ np1.poll()
 #-------------------------channel 2----------------------------------#
 url2 = "https://ssc.nic.in/Portal/Results"
 tag2 = "cgl result"
-table_name1 = "cgl"
+table_name2 = "cgl"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
