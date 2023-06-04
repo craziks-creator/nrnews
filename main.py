@@ -71,13 +71,13 @@ table_name4 = "cgl"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
-ie1.set_list_selector('div.tabsSectionPrt > #noticescgl > div.noticeTxt a') #id_ul_li
+ie1.set_list_selector('tr > td > a') #id_ul_li
 ie1.set_title_selector('#noticescgl')  #id
-ie1.set_paragraph_selector('div.tabsSectionPrt > #noticescgl > div.noticeTxt a[href]')
+ie1.set_paragraph_selector('tr > td > a')
 ie1.set_time_selector('td')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
-#ie1.set_id_policy(ssc_id_policy)
+ie1.set_id_policy(ssc_id_policy)
 # News postman to manage sending affair
 np1 = NewsPostman(listURLs=[url3, ], sendList=[channel,channel2, ], db=db, tag=tag4)
 np1.set_bot_token(bot_token)
