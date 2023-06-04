@@ -95,7 +95,7 @@ table_name2 = "cgl"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
-ie1.set_list_selector('#noticescgl > div.noticeTxt tr') #id_ul_li
+ie1.set_list_selector('#noticescgl > div.noticeTxt a') #id_ul_li
 ie1.set_title_selector('#noticescgl > div.noticeTxt span')  #id
 ie1.set_paragraph_selector('#noticescgl > div.noticeTxt tr a')
 ie1.set_time_selector('td')
