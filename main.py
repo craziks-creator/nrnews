@@ -72,9 +72,14 @@ table_name4 = "others"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
+"""
 ie1.set_list_selector('#noticesothers > div.noticeTxt') #id_ul_li
 ie1.set_title_selector('#noticesothers > div.noticeTxt span ')  #id
 ie1.set_paragraph_selector('#noticesothers > div.noticeTxt a')
+"""
+ie1.set_list_selector('#noticesothers > div.noticeTxt tr:nth-child(-n+4) a') #id_ul_li
+ie1.set_title_selector('#noticesothers > div.noticeTxt span ')  #id
+ie1.set_paragraph_selector('#noticesothers > div.noticeTxt tr:nth-child(-n+4) a[href])
 ie1.set_time_selector('td')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
