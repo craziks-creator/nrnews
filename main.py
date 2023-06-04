@@ -64,7 +64,7 @@ np1.set_max_list_length(25)
 np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 """
-
+#-------------------------channel 3----------------------------------#
 url2 = "https://www.scmp.com/rss/91/feed"
 tag2 = "SCMP"
 table_name2 = "scmpnews"
