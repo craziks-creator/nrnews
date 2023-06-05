@@ -11,8 +11,9 @@ from telegram_news.utils import xml_to_json
 bot_token = os.getenv("TOKEN")
 channel = os.getenv("CHANNEL")
 channel2 = os.getenv("CHANNEL2")
-DATABASE_URL = os.getenv("DATABASE_URL")
+channel3 = os.getenv("CHANNEL3")
 
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 db = Session(bind=engine.connect())
 def ssc_id_policy(link):
@@ -65,7 +66,7 @@ np1.set_max_list_length(25)
 np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 
-#-------------------------channel 3----------------------------------#
+#-------------------------channel 4----------------------------------#
 
 tag4 = "others result"
 table_name4 = "others"
@@ -93,7 +94,7 @@ np1.set_max_list_length(25)
 np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 
-#-------------------------channel 4----------------------------------#
+#-------------------------channel 2----------------------------------#
 
 tag2 = "cgl result"
 table_name2 = "cgl"
@@ -109,6 +110,28 @@ ie1.max_post_length = 2000
 ie1.set_id_policy(ssc_id_policy)
 # News postman to manage sending affair
 np1 = NewsPostman(listURLs=[url3, ], sendList=[channel,channel2, ], db=db, tag=tag2)
+np1.set_bot_token(bot_token)
+np1.set_extractor(ie1)
+np1.set_table_name(table_name2)
+np1.set_max_list_length(25)
+np1.set_max_table_rows(25 * 3, False)
+np1.poll()
+#-------------------------channel 5----------------------------------#
+url5= "https://sssc.uk.gov.in/"
+tag5 = "Uksssc"
+table_name = "uksssc"
+# Info extractor to process data format
+ie1 = InfoExtractor()
+# Select elements by CSS-based selector
+ie1.set_list_selector('#midColumn>p a') #id_ul_li
+ie1.set_title_selector('#midColumn')  #id
+ie1.set_paragraph_selector('#midColumn>p a[href]')
+ie1.set_time_selector('td')
+ie1.set_source_selector('span.sourceTemplate')
+ie1.max_post_length = 2000
+ie1.set_id_policy(ssc_id_policy)
+# News postman to manage sending affair
+np1 = NewsPostman(listURLs=[url5, ], sendList=[channel,channel2,channel3, ], db=db, tag=tag5)
 np1.set_bot_token(bot_token)
 np1.set_extractor(ie1)
 np1.set_table_name(table_name2)
