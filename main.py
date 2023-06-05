@@ -123,10 +123,10 @@ table_name = "uksssc"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
-ie1.set_list_selector('#midColumn>p a') #id_ul_li
+ie1.set_list_selector('#midColumn p:nth-child(-n+6) a') #id_ul_li
 ie1.set_title_selector('#midColumn')  #id
-ie1.set_paragraph_selector('#midColumn>p a[href]')
-ie1.set_time_selector('td')
+ie1.set_paragraph_selector('#midColumn p:nth-child(-n+6) a[href]')
+ie1.set_time_selector('span')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
 ie1.set_id_policy(ssc_id_policy)
