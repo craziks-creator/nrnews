@@ -27,4 +27,4 @@ or
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-**4.6 was functional now added 4.7**
+**4.6 was functional now added 4.8**
