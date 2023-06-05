@@ -119,7 +119,7 @@ np1.poll()
 #-------------------------channel 5----------------------------------#
 url5= "https://sssc.uk.gov.in/"
 tag5 = "Uksssc"
-table_name = "uksssc"
+table_name5 = "uksssc"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
