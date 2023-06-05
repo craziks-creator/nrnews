@@ -27,5 +27,5 @@ or
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-**4.6 was functional now changes self._tag and added 5.1 version**
+**4.6 was functional now changes self._tag and added 5.1  version**
  2
