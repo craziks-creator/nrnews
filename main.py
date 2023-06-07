@@ -140,7 +140,7 @@ np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 #-------------------------channel 6----------------------------------#
 
-url6 = "https://doc.ssc.nic.in/Portal/LatestNews?page=1"
+url6 = "https://ssc.nic.in/Portal/LatestNews?page=1"
 tag6 = "ssc"
 table_name6 = "ssc"
 
@@ -148,9 +148,9 @@ table_name6 = "ssc"
 ie1 = InfoExtractor()
 
 # Select elements by CSS-based selector
-ie1.set_list_selector('#forScrollNews > ul > li  a')
+ie1.set_list_selector('#forScrollNews > ul > li:nth-child(-n+6) a')
 ie1.set_title_selector('h3')
-ie1.set_paragraph_selector('#forScrollNews > ul > li  a[href]')
+ie1.set_paragraph_selector('#forScrollNews > ul > li:nth-child(-n+6) a[href]')
 ie1.set_time_selector('div.eachNotification > span')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
