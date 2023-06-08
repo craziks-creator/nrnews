@@ -147,7 +147,7 @@ ie1 = InfoExtractor()
 # Select elements by CSS-based selector
 ie1.set_list_selector('#forScrollNews > ul > li > a') #id_ul_li
 ie1.set_title_selector('#forScrollNews')  #id
-ie1.set_paragraph_selector('#forScrollNews > ul > li > a[href]')
+ie1.set_paragraph_selector('a')
 
 ie1.set_time_selector('span')
 ie1.set_source_selector('span.sourceTemplate')
