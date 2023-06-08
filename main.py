@@ -145,16 +145,16 @@ table_name6 = "ssc"
 # Info extractor to process data format
 ie1 = InfoExtractor()
 # Select elements by CSS-based selector
-ie1.set_list_selector('div.eachNotification  a') #id_ul_li
+ie1.set_list_selector('#forScrollNews > ul > li a') #id_ul_li
 ie1.set_title_selector('#forScrollNews')  #id
-ie1.set_paragraph_selector('div.eachNotification  a[href]')
+ie1.set_paragraph_selector('#forScrollNews > ul > li a[href]')
 
 ie1.set_time_selector('span')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
 ie1.set_id_policy(ssc_id_policy)
 # News postman to manage sending affair
-np1 = NewsPostman(listURLs=[url6, ], sendList=[channel2, ], db=db, tag=tag6)
+np1 = NewsPostman(listURLs=[url6, ], sendList=[channel2,channel3 ], db=db, tag=tag6)
 np1.set_bot_token(bot_token)
 np1.set_extractor(ie1)
 np1.set_table_name(table_name6)
