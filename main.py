@@ -147,7 +147,7 @@ ie1 = InfoExtractor()
 # Select elements by CSS-based selector
 ie1.set_list_selector('div.eachNotification a') #id_ul_li
 ie1.set_title_selector('#forScrollNews')  #id
-ie1.set_paragraph_selector('div.eachNotification a[href]')
+ie1.set_paragraph_selector('div.scrollingNotifications_New>ul>li a[href]')
 ie1.set_time_selector('span')
 ie1.set_source_selector('span.sourceTemplate')
 ie1.max_post_length = 2000
