@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 
 from telegram_news.template import InfoExtractor, NewsPostman, InfoExtractorJSON, NewsPostmanJSON
 from telegram_news.utils import xml_to_json
-
+from keep_alive import keep_alive
 bot_token = os.getenv("TOKEN")
 channel = os.getenv("CHANNEL")
 channel2 = os.getenv("CHANNEL2")
@@ -16,6 +16,7 @@ channel3 = os.getenv("CHANNEL3")
 DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 db = Session(bind=engine.connect())
+keep_alive()
 def ssc_id_policy(link):
         return hashlib.md5(link.encode("utf-8")).hexdigest()
 
