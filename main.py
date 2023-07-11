@@ -23,7 +23,7 @@ def ssc_id_policy(link):
 #-------------------------channel 1----------------------------------#
 
 url1 = "http://sscnr.nic.in/newlook/site/Whatsnew.html"
-tag1 = "sscnr"
+tag1 = "FROM SSCNR: CLICK"
 table_name1 = "sscnr"
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -46,7 +46,7 @@ np1.poll()
 
 #-------------------------channel 3----------------------------------#
 url3 = "https://ssc.nic.in/Portal/Results"
-tag3 = "chsl result"
+tag3 = "FROM CHSL RESULT"
 table_name3 = "chsl"
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -69,7 +69,7 @@ np1.poll()
 
 #-------------------------channel 4----------------------------------#
 
-tag4 = "others result"
+tag4 = "FROM OTHERS RESULT"
 table_name4 = "others"
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -97,7 +97,7 @@ np1.poll()
 
 #-------------------------channel 2----------------------------------#
 
-tag2 = "cgl result"
+tag2 = "FROM CGL RESULT"
 table_name2 = "cgl"
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -119,7 +119,7 @@ np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 #-------------------------channel 5----------------------------------#
 url5= "https://sssc.uk.gov.in/"
-tag5 = "Uksssc"
+tag5 = "FROM UKSSSC: CLICK"
 table_name5 = "uksssc"
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -141,7 +141,7 @@ np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 #-------------------------channel 6----------------------------------#
 url6= "https://doc.ssc.nic.in/Portal/LatestNews/"
-tag6 = "ssc"
+tag6 = "FROM SSC"
 table_name6 = "ssc"
 # Info extractor to process data format
 ie1 = InfoExtractor()
