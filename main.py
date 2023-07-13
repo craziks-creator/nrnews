@@ -23,7 +23,7 @@ def ssc_id_policy(link):
 #-------------------------channel 1----------------------------------#
 
 url1 = "https://sscnr.nic.in/newlook/site/Whatsnew.html"
-tag1 = "FROM SSCNR: CLICK"
+tag1 = "SSCNR: CLICK HERE"
 table_name1 = "sscnr"
 # Info extractor to process data format
 ie1 = InfoExtractor()
@@ -119,7 +119,7 @@ np1.set_max_table_rows(25 * 3, False)
 np1.poll()
 #-------------------------channel 5----------------------------------#
 url5= "https://sssc.uk.gov.in/"
-tag5 = "FROM UKSSSC: CLICK"
+tag5 = "UKSSSC: CLICK HERE"
 table_name5 = "uksssc"
 # Info extractor to process data format
 ie1 = InfoExtractor()
